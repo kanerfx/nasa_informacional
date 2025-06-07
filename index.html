@@ -7,24 +7,11 @@
     <link rel="icon" href="./img/favicon.ico">
     <title>Astronomia By Renan</title>
     <link rel="stylesheet" href="styles.css">
-<!-- Code injected by Five-server -->
-  <script async data-id="five-server" data-file="/Arquivos/Salvar_Dados/Pasta sem título/nasa_informacional-main/index.html" type="application/javascript" src="/fiveserver.js"></script>
-  </head>
+</head>
 
 <body>
     <header class="navbar">
-        <nav>
-            <ul>
-                <li><a href="#secao1">#1</a></li>
-                <li><a href="#secao2">#2</a></li>
-                <li><a href="#secao3">#3</a></li>
-                <li><a href="#secao4">#4</a></li>
-                <li><a href="#secao5">#5</a></li>
-                <li><a href="#secao6">#6</a></li>
-                <li><a href="#secao7">#7</a></li>
-                <li><a href="#secao8">#8</a></li>
-            </ul>
-        </nav>
+        <svg id="Menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
     </header>
     <div class="container">
         <div class="sidebar">
@@ -149,6 +136,32 @@
                     <img src="./img/sistema_binario.webp" alt="sistema_binario">
                 </div>
             </div>
+
+
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.querySelector('.sidebar');
+            
+                    if (sidebar.style.display === 'block') {
+                        sidebar.style.display = 'none';
+                    } else {
+                        sidebar.style.display = 'block';
+                    }
+                }
+            
+                const menuIcon = document.getElementById('Menu');
+                menuIcon.addEventListener('click', toggleSidebar);
+            
+                const menuLinks = document.querySelectorAll('.menu a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        const sidebar = document.querySelector('.sidebar');
+                        sidebar.style.display = 'none';
+                    });
+                });
+            </script>
+            
+            
 
         </div>
     </div>
