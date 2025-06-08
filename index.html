@@ -30,9 +30,6 @@
                     <li><a href="#secao8">Sistema Binário</a></li>
                 </ul>
             </nav>
-            <div class="logo2">
-                <img src="./img/saturno.webp" alt="Logo2">
-            </div>
         </div>
         <div class="content">
             <div class="box" id="secao1">
@@ -121,8 +118,9 @@
                     um supercondutor e de um raio laser é capaz de levar energia de um lugar para outro através de um
                     feixe de luz coerente, utilizando uma quantidade muito pequena de energia, também pode gerar raios
                     laser potentes com baixo consumo e fazer transporte de bits em meio sólido.</p>
-            <div class="logo2">
-                <img src="./img/superfluido.jpg" alt="superfluido">
+                <div class="logo2">
+                    <img src="./img/superfluido.jpg" alt="superfluido">
+                </div>
             </div>
             <div class="box" id="secao8">
                 <h2>Sistema Binário</h2>
@@ -146,6 +144,7 @@
                         sidebar.style.display = 'none';
                     } else {
                         sidebar.style.display = 'block';
+                        
                     }
                 }
             
@@ -154,11 +153,28 @@
             
                 const menuLinks = document.querySelectorAll('.menu a');
                 menuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        const sidebar = document.querySelector('.sidebar');
-                        sidebar.style.display = 'none';
-                    });
+                    if (window.innerWidth <= 768) {
+                        link.addEventListener('click', toggleSidebar);
+                    }
+                    else {
+                        link.addEventListener('click', () => {
+                            const sidebar = document.querySelector('.sidebar');
+                            sidebar.style.display = 'block';
+                        });
+                    }
                 });
+
+                window.addEventListener('resize', () => {
+                    const sidebar = document.querySelector('.sidebar');
+            
+                    if (window.innerWidth > 768) {
+                        sidebar.style.display = 'block';
+                    } else {
+                        sidebar.style.display = 'none'
+                        logo2.style.display = 'block';
+                    }
+                });
+
             </script>
             
             
